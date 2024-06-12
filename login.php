@@ -15,14 +15,14 @@
         <section class="form login">
             <header>Chat App</header>
             <form action="#">
-                <div class="error-text">This is an error message!</div>
+                <div class="error-text"></div>
                 <div class="field input">
                     <label for="email">Email</label>
-                    <input type="text" placeholder="someone@example.com">
+                    <input type="text" name="email" placeholder="someone@example.com">
                 </div>
                 <div class="field input">
                     <label for="password">Password</label>
-                    <input type="password" placeholder="Password">
+                    <input type="password" name="password" placeholder="Password">
                     <i class="fas fa-eye"></i>
                 </div>
                 <div class="field button">
@@ -34,5 +34,6 @@
     </div>
 
     <script src="javascript/pass-show-hide.js"></script>
+    <script src="javascript/login.js"></script>
 </body>
 </html>
