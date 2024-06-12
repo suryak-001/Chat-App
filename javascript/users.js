@@ -6,6 +6,30 @@ searchBtn.onclick = () => {
     searchBar.classList.toggle("active");
     searchBar.focus();
     searchBtn.classList.toggle("active");
+    searchBar.value = "";
+}
+
+searchBar.onkeyup = () => {
+    let searchTerm = searchBar.value;
+    if (searchTerm != "") {
+        searchBar.classList.add("active");
+    } else {
+        searchBar.classList.remove("active");
+    }
+    // starting Ajax
+    let xhr = new XMLHttpRequest(); // creating XML object
+    xhr.open("POST", "php/search.php");
+    xhr.onload = () => {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                let data = xhr.response;
+                usersList.innerHTML = data;
+            }
+        }
+    }
+    // sending the form data to php through ajax
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send("searchTerm=" + searchTerm); // sending the form data
 }
 
 setInterval(() => {
@@ -16,7 +40,9 @@ setInterval(() => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 let data = xhr.response;
-                usersList.innerHTML = data;
+                if (!searchBar.classList.contains("active")) {
+                    usersList.innerHTML = data;
+                }
             }
         }
     }
