@@ -15,4 +15,3 @@ Developed a real-time chat application using HTML, CSS, JavaScript, and PHP. The
 
 - Real-time chat functionality: Users can send and receive messages in real-time, allowing for instant communication.
 - User authentication: Users can create accounts and log in to access the chat application.
-- User profiles: Users can view and edit their profiles, including their profile picture and bio.
