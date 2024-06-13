@@ -15,6 +15,8 @@
         // trimming message if words are > 28 characters
         (strlen($result) > 28) ? $msg = substr($result, 0, 28) . '...' : $msg = $result;
         ($outgoing_id == $row2['outgoing_msg_id']) ? $you = 'You: ' : $you = '';
+        // check if user online or offline
+        ($row['status'] == "Offline now") ? $offline = "offline" : $offline = "";
 
         $output .= '<a href="chat.php?user_id=' . $row['unique_id'] . '">
                         <div class="content">
@@ -24,7 +26,7 @@
                                 <p>' . $you . $msg . '</p>
                             </div>
                         </div>
-                        <div class="status-dot"><i class="fas fa-circle"></i></div>
+                        <div class="status-dot '. $offline .'"><i class="fas fa-circle"></i></div>
                     </a>';
     }
 
