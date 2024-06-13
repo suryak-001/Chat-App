@@ -35,7 +35,7 @@
                 <button><i class="fas fa-search"></i></button>
             </div>
             <div class="users-list">
-                
+                <!-- display users list here -->
             </div>
         </section>
     </div>
